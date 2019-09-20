@@ -53,6 +53,7 @@ export default class WordCard extends Component{
     render(){
         return (
             <div>
+                <h1>CATEGORY : {this.props.category}</h1>
                 { Array.from(this.state.chars).map((c,i) => <CharacterCard value={c} key={i} attempt={this.state.attempt} activationHandler={this.activationHandler}/>)}
                 <h1> Round : {this.state.attempt}</h1>
                 <h3> You can play maximum at {this.state.playMax} times</h3>
