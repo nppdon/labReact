@@ -57,7 +57,7 @@ export default class WordCard extends Component{
                 <h1> Round : {this.state.attempt}</h1>
                 <h3> You can play maximum at {this.state.playMax} times</h3>
                 <h1>{this.state.completed&&!this.state.gamestatus? 'YOU WIN' : ''}</h1>
-                <h1>{this.state.gamestatus? 'YOU LOSE' : ''}</h1>
+                <h1>{this.state.gamestatus? 'YOU LOSE ' : ''}</h1>
             </div>
         );
     }
