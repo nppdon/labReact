@@ -5,7 +5,17 @@
   color: red;
   background: pink;
 }
-
+.category{
+  display: inline-block;
+  text-align: center;
+  width: 10em;
+  font-size: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);
+  margin: 1em;
+  user-select: none;
+  color: greenyellow;
+  background: darkolivegreen;
+}
 .card {
   display: inline-block;
   text-align: center;
