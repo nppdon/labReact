@@ -7,9 +7,10 @@ export default class CharacterCard extends Component {
         }
     }
 
-    /*componentDidUpdate(prevProps){
+    componentDidUpdate(prevProps){
+        if(prevProps.attempt != this.props.attempt)
         this.setState({active: false})
-    }*/
+    }
 
     activate = () =>{
         if(!this.state.active){
