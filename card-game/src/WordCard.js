@@ -12,7 +12,8 @@ const prepareStateFromWord = (given_word) => {
         guess: [],
         completed: false,
         playMax: 5, // play maximum 5 times
-        gamestatus:false // true when attempted 5 times or when you lose
+        gamestatus:false, // true when attempted 5 times or when you lose
+        hint: false // hint when attempt more than 3
     }
 }
 export default class WordCard extends Component{
@@ -40,6 +41,9 @@ export default class WordCard extends Component{
                 }
                 else{
                     this.setState({guess: [], attempt: this.state.attempt + 1})
+                    if(this.state.attempt>=3){
+                        this.setState({guess: [], hint:true})
+                    }
                 }
             }
             else{
@@ -57,6 +61,7 @@ export default class WordCard extends Component{
                 <br></br>
                 { Array.from(this.state.chars).map((c,i) => <CharacterCard value={c} key={i} attempt={this.state.attempt} activationHandler={this.activationHandler}/>)}
                 <h1> Round : {this.state.attempt}</h1>
+                <h2>THE WORD BEGINS WITH "{this.state.hint? `${this.state.word[0]}` : ''}" AND ENDS WITH "{this.state.hint? `${this.state.word[this.state.word.length-1]}` : ''}"</h2>
                 <h3> You can play maximum at {this.state.playMax} times</h3>
                 <h1>{this.state.completed&&!this.state.gamestatus? 'YOU WIN' : ''}</h1>
                 <h1>{this.state.gamestatus? 'YOU LOSE ' : ''}</h1>
