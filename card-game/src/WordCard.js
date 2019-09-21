@@ -56,7 +56,7 @@ export default class WordCard extends Component{
     }
     render(){
         return (
-            <div>
+            <div className="App">
                 <h1 className="category">CATEGORY : {this.props.category}</h1>
                 <br></br>
                 { Array.from(this.state.chars).map((c,i) => <CharacterCard value={c} key={i} attempt={this.state.attempt} activationHandler={this.activationHandler}/>)}
