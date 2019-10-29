@@ -61,9 +61,9 @@ export default class WordCard extends Component{
                 <br></br>
                 { Array.from(this.state.chars).map((c,i) => <CharacterCard value={c} key={i} attempt={this.state.attempt} activationHandler={this.activationHandler}/>)}
                 <h1> Round : {this.state.attempt}</h1>
-                <h2>THE WORD BEGINS WITH "{this.state.hint? `${this.state.word[0]}` : ''}" AND ENDS WITH "{this.state.hint? `${this.state.word[this.state.word.length-1]}` : ''}"</h2>
+                <h2>THE WORD BEGINS WITH "{this.state.hint? `${this.state.word[0]}` : '... '}" AND ENDS WITH "{this.state.hint? `${this.state.word[this.state.word.length-1]}` : '...'}"</h2>
                 <h3> You can play maximum at {this.state.playMax} times</h3>
-                <h1 className="win">{this.state.completed&&!this.state.gamestatus? 'YOU WIN' : ''}</h1>
+                <h1 className="win" >{this.state.completed&&!this.state.gamestatus? 'YOU WIN' : ''}</h1>
                 <h1 className="lose">{this.state.gamestatus? 'YOU LOSE ' : ''}</h1>
             </div>
         );

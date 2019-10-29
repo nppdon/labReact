@@ -34,7 +34,9 @@ class App extends Component{
         {
           <WordCard value={word} category={category}/>
           //Array.from(word).map((c,i) => <CharacterCard value={c} key={i}/>)
+          
         }
+        
       </div>
     );
   }
